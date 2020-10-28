@@ -1,6 +1,8 @@
 import React from "react";
 
-import MarkedPreview from '../MarkedPreview/MarkedPreview'
+import MarkedInput from "../MarkedInput/MarkedInput";
+import MarkedPreview from '../MarkedPreview/MarkedPreview';
+import {DefaultData} from '../../utils/DefaultData';
 
 import './MarkedEditor.css';
 
@@ -11,7 +13,7 @@ interface State{
 class MarkedEditor extends React.Component<{}, State> {
 
     state: State = {
-        markeddata: ''
+        markeddata: DefaultData
     }
 
     onChangeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -25,7 +27,8 @@ class MarkedEditor extends React.Component<{}, State> {
         let {markeddata} = this.state;
         return(
             <div className="MarkedEditor">
-                <textarea onChange={this.onChangeHandler} value={markeddata} className="MarkedEditor--Textarea" />
+                {/* <textarea onChange={this.onChangeHandler} value={markeddata} className="MarkedEditor--Textarea" /> */}
+                <MarkedInput changed={this.onChangeHandler} markeddata={markeddata} />
                 <MarkedPreview markeddata={markeddata}/>
             </div>
         )

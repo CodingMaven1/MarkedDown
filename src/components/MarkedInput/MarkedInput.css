@@ -1,0 +1,9 @@
+.MarkedInput{
+    height: 100%;
+    width: 45%;
+}
+
+.MarkedInput--Textarea{
+    height: 100%;
+    width: 100%;
+}
