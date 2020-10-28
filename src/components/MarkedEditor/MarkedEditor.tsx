@@ -1,7 +1,9 @@
 import React from "react";
 import marked from 'marked';
-import Prism from "prismjs"; //css for Prism is imported in ThemeSelector
-import "../../utils/prism-imports";
+import Prism from "prismjs"; 
+import '../../utils/Prism.css';
+
+import "../../utils/PrismImports";
 
 import './MarkedEditor.css';
 
@@ -15,7 +17,7 @@ class MarkedEditor extends React.Component<{}, State> {
         markeddata: ''
     }
 
-    componentDidMount(){
+    componentDidUpdate(){
         Prism.highlightAll();
     }
 
