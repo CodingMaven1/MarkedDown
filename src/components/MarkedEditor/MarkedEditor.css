@@ -1,0 +1,11 @@
+.MarkedEditor{
+    height: 80vh;
+    width: 80vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.MarkedEditor--Textarea{
+    height: 100%;
+    width: 45%;
+}

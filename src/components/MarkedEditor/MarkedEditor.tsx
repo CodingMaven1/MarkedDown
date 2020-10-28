@@ -1,9 +1,6 @@
 import React from "react";
-import marked from 'marked';
-import Prism from "prismjs"; 
-import '../../utils/Prism.css';
 
-import "../../utils/PrismImports";
+import MarkedPreview from '../MarkedPreview/MarkedPreview'
 
 import './MarkedEditor.css';
 
@@ -17,10 +14,6 @@ class MarkedEditor extends React.Component<{}, State> {
         markeddata: ''
     }
 
-    componentDidUpdate(){
-        Prism.highlightAll();
-    }
-
     onChangeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         event.preventDefault();
         let {markeddata} = this.state;
@@ -32,8 +25,8 @@ class MarkedEditor extends React.Component<{}, State> {
         let {markeddata} = this.state;
         return(
             <div className="MarkedEditor">
-                <textarea onChange={this.onChangeHandler} value={markeddata} />
-                <div dangerouslySetInnerHTML={{__html: marked(markeddata)}} ></div>
+                <textarea onChange={this.onChangeHandler} value={markeddata} className="MarkedEditor--Textarea" />
+                <MarkedPreview markeddata={markeddata}/>
             </div>
         )
     }
